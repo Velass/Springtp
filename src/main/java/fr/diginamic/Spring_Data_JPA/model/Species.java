@@ -50,5 +50,10 @@ public class Species {
     public void setAnimals(List<Animal> animals) {
         this.animals = animals;
     }
+
+    @Override
+    public String toString() {
+        return "Species [id=" + getId() + ", commonName=" + getCommon_name() + ", latinName=" + getLatin_name() + "]";
+    }
     
 }

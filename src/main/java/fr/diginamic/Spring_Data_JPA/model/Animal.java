@@ -32,6 +32,9 @@ public class Animal {
     @JoinColumn(name = "species_id") // Colonne de la clé étrangère vers Species
     private Species species; // Utilisez @ManyToOne pour représenter la relation Many-to-One avec Species
 
+    public Animal() {
+    }
+
     public int getId() {
         return id;
     }
