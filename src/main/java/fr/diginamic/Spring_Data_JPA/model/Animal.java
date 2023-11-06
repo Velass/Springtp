@@ -9,7 +9,10 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+
 
 @Entity
 public class Animal {
@@ -24,5 +27,59 @@ public class Animal {
 
     @ManyToMany(mappedBy = "animals") // Utilisez "animals" pour représenter la relation Many-to-Many
     private List<Person> persons; // Supposons que vous avez une classe "Person" pour représenter les personnes
+    
+    @ManyToOne
+    @JoinColumn(name = "species_id") // Colonne de la clé étrangère vers Species
+    private Species species; // Utilisez @ManyToOne pour représenter la relation Many-to-One avec Species
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public List<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
+    }
+
+    public Species getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(Species species) {
+        this.species = species;
+    }
+
+
 
 }

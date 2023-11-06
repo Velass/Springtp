@@ -31,4 +31,56 @@ public class Person {
     @JoinTable(name = "person_animals", joinColumns = @JoinColumn(name = "person_id" ),inverseJoinColumns = @JoinColumn(name = "animals_id")) // Nom de la table de jointure si nécessaire
     @Column(name = "id_person")
     private List<Animal> animals;
+
+
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public int getAge() {
+        return age;
+    }
+
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+
+    public String getLastname() {
+        return lastname;
+    }
+
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+
+
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
+    }
+
+    
 }
