@@ -1,5 +1,8 @@
 package fr.diginamic.Spring_Data_JPA;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -49,11 +52,18 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// System.out.println(personRepository.findPeopleDistinctByLastnameOrFirstname("Lamarque",
 		// "Henri"));
 		// System.out.println(personRepository.findByAgeGreaterThanEqual(30));
-		System.out.println(animalRepository.findByColor("Noir"));
-		System.out.println(animalRepository.findBySpecies(speciesRepository.findById(2).get()));
+		// List <String> color = new ArrayList();
+		// color.add("Noir");
+		// System.out.println(animalRepository.findByColorIn(color));
+		// System.out.println(animalRepository.findBySpecies(speciesRepository.findById(2).get()));
 
 		// animalRepository.save(test);
 		// animalRepository.deleteById(10);
+
+		// System.out.println(speciesRepository.findAllOrderedByCommonNameAsc());
+		// System.out.println(speciesRepository.findAllSpeciesByCommonName("Chat"));
+				//System.out.println(personRepository.findAllPersonByAgeMiniAndAgeMax(20,80));
+				//System.out.println(personRepository.findAllPersonByAnimal(animalRepository.findById(1)));
 
 	}
 
