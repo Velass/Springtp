@@ -94,7 +94,7 @@ public class Animal {
             personsString = personsString.substring(0, personsString.length() - 2) + "]";
         }
     
-        String speciesString = (species != null) ? species.getCommon_name() : "null";
+        String speciesString = (species != null) ? species.getCommonName() : "null";
     
         return "Animal [id=" + id +
                ", color=" + color +

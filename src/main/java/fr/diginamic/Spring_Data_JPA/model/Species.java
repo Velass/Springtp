@@ -2,6 +2,7 @@ package fr.diginamic.Spring_Data_JPA.model;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +14,10 @@ public class Species {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String common_name;
-    private String latin_name;
+    @Column(name = "common_name")
+    private String commonName;
+    @Column(name = "latin_name")
+    private String latinName;
 
     @OneToMany(mappedBy = "species") // Utilisez "species" pour représenter la relation One-to-Many
     private List<Animal> animals;
@@ -27,20 +30,20 @@ public class Species {
         this.id = id;
     }
 
-    public String getCommon_name() {
-        return common_name;
+    public String getCommonName() {
+        return commonName;
     }
 
-    public void setCommon_name(String common_name) {
-        this.common_name = common_name;
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
     }
 
-    public String getLatin_name() {
-        return latin_name;
+    public String getLatinName() {
+        return latinName;
     }
 
-    public void setLatin_name(String latin_name) {
-        this.latin_name = latin_name;
+    public void setLatinName(String latinName) {
+        this.latinName = latinName;
     }
 
     public List<Animal> getAnimals() {
@@ -53,7 +56,7 @@ public class Species {
 
     @Override
     public String toString() {
-        return "Species [id=" + id + ", common_name=" + common_name + ", latin_name=" + latin_name + "]";
+        return "Species [id=" + id + ", commonName=" + commonName + ", latinName=" + latinName + "]";
     }
-    
+
 }
