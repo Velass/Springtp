@@ -12,7 +12,7 @@ import fr.diginamic.Spring_Data_JPA.model.Animal;
 import fr.diginamic.Spring_Data_JPA.model.Person;
 
 @Repository
-public interface PersonRepository extends CrudRepository<Person, Long> {
+public interface PersonRepository extends CrudRepository<Person, Long>, PersonRepositoryCustom {
     List<Person> findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);
 
     List<Person> findByAgeGreaterThanEqual(int age);

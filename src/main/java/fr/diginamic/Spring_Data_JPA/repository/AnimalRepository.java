@@ -20,6 +20,6 @@ public interface AnimalRepository extends CrudRepository<Animal, Integer> {
         @Query("SELECT COUNT(a) from animal a where a.sex = :sex")
         Long countBySex(@Param("sex") Sex m);
 
-        @Query("SELECT CASE WHEN SIZE(a.persons) > 0 THEN true ELSE false END FROM Animal a WHERE a = :animal")
-        boolean hasOwner(@Param("animal") Animal animal);
+        @Query("SELECT CASE WHEN SIZE(a.person) > 0 THEN true ELSE false END FROM Animal a WHERE a = :id")
+        Boolean hasOwner(@Param("id") Animal id);
 }
