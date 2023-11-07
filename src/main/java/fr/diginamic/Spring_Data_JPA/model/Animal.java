@@ -83,6 +83,28 @@ public class Animal {
         this.species = species;
     }
 
+    @Override
+    public String toString() {
+        String personsString = "null";
+        if (persons != null && !persons.isEmpty()) {
+            personsString = "[";
+            for (Person person : persons) {
+                personsString += person.getFirstname() + ", ";
+            }
+            personsString = personsString.substring(0, personsString.length() - 2) + "]";
+        }
+    
+        String speciesString = (species != null) ? species.getCommon_name() : "null";
+    
+        return "Animal [id=" + id +
+               ", color=" + color +
+               ", name=" + name +
+               ", sex=" + sex +
+               ", persons=" + personsString +
+               ", species=" + speciesString +
+               "]";
+    }
+
 
 
 }

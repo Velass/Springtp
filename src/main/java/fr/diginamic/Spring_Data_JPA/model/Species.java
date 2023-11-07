@@ -53,7 +53,7 @@ public class Species {
 
     @Override
     public String toString() {
-        return "Species [id=" + getId() + ", commonName=" + getCommon_name() + ", latinName=" + getLatin_name() + "]";
+        return "Species [id=" + id + ", common_name=" + common_name + ", latin_name=" + latin_name + "]";
     }
     
 }

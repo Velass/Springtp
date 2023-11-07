@@ -82,5 +82,12 @@ public class Person {
         this.animals = animals;
     }
 
+
+    @Override
+    public String toString() {
+        return "Person [id=" + getId() + ", age=" + getAge() + ", firstname=" + getFirstname() + ", lastname=" + getLastname()
+                + ", animals=" + getAnimals() + "]";
+    }
+
     
 }

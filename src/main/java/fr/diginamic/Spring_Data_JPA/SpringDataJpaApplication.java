@@ -5,8 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import fr.diginamic.Spring_Data_JPA.enums.Sex;
 import fr.diginamic.Spring_Data_JPA.model.Animal;
 import fr.diginamic.Spring_Data_JPA.repository.*;
+import jakarta.transaction.Transactional;
 
 @SpringBootApplication
 public class SpringDataJpaApplication implements CommandLineRunner {
@@ -23,6 +25,7 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		
 	}
 	@Override
+	@Transactional
 	public void run(String... args) throws Exception {
 		// Effectuez des opérations de démarrage ici
 		System.out.println("L'application démarre.");
@@ -37,7 +40,13 @@ public class SpringDataJpaApplication implements CommandLineRunner {
         speciesRepository.findAll().forEach(System.out::println);
 		
 		Animal test = new Animal();
-		animalRepository.save(test);
+		test.setColor("bleu");
+		test.setName("bernard");
+		test.setSex(Sex.M);
+		test.setSpecies(speciesRepository.findById(2).get());
+
+		// animalRepository.save(test);
+		animalRepository.deleteById(10);
    
 	}
 
