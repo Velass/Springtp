@@ -44,9 +44,13 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// test.setSex(Sex.M);
 		// test.setSpecies(speciesRepository.findById(2).get());
 		// System.out.println(speciesRepository.findFirstByCommonName("Chat"));
-		// System.out.println(speciesRepository.findByLatinNameIgnoreCase("felis silvestris catus"));
-		System.out.println(personRepository.findPeopleDistinctByLastnameOrFirstname("Lamarque","Henri"));
-		System.out.println(personRepository.findByAgeGreaterThanEqual(30));
+		// System.out.println(speciesRepository.findByLatinNameIgnoreCase("felis
+		// silvestris catus"));
+		// System.out.println(personRepository.findPeopleDistinctByLastnameOrFirstname("Lamarque",
+		// "Henri"));
+		// System.out.println(personRepository.findByAgeGreaterThanEqual(30));
+		System.out.println(animalRepository.findByColor("Noir"));
+		System.out.println(animalRepository.findBySpecies(speciesRepository.findById(2).get()));
 
 		// animalRepository.save(test);
 		// animalRepository.deleteById(10);
