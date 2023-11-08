@@ -12,7 +12,7 @@ import fr.diginamic.Spring_Data_JPA.model.Animal;
 import fr.diginamic.Spring_Data_JPA.model.Person;
 
 @Repository
-public interface PersonRepository extends CrudRepository<Person, Long>, PersonRepositoryCustom {
+public interface PersonRepository extends CrudRepository<Person, Integer>, PersonRepositoryCustom {
     List<Person> findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);
 
     List<Person> findByAgeGreaterThanEqual(int age);
@@ -22,5 +22,6 @@ public interface PersonRepository extends CrudRepository<Person, Long>, PersonRe
 
     @Query("from Person p  where :Animal member of p.animals")
     List<Person> findAllPersonByAnimal(@Param("Animal") Animal animals);
+    
 
 }

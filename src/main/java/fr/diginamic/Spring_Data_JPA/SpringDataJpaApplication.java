@@ -64,6 +64,10 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// System.out.println(speciesRepository.findAllSpeciesByCommonName("Chat"));
 				//System.out.println(personRepository.findAllPersonByAgeMiniAndAgeMax(20,80));
 				//System.out.println(personRepository.findAllPersonByAnimal(animalRepository.findById(1)));
+		
+		
+		personRepository.deletePeopleWithoutAnimals();
+		//personRepository.createManyEntity(2);
 
 	}
 
