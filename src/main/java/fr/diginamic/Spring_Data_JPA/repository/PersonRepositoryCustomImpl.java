@@ -1,8 +1,5 @@
 package fr.diginamic.Spring_Data_JPA.repository;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
-
 import fr.diginamic.Spring_Data_JPA.model.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -27,7 +24,7 @@ public class PersonRepositoryCustomImpl implements PersonRepositoryCustom {
     public void createManyEntity(int count) {
         for (int i = 0; i < count; i++) {
             Person person = new Person();
-            person.setFirstname("Gerard"+ i); // Générez un nom aléatoire
+            person.setFirstname("Gerard"+ i); 
             person.setAge(i);
             person.setLastname("Patrick" + i);
 

@@ -1,7 +1,5 @@
 package fr.diginamic.Spring_Data_JPA;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -66,8 +64,8 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 				//System.out.println(personRepository.findAllPersonByAnimal(animalRepository.findById(1)));
 		
 		
-		personRepository.deletePeopleWithoutAnimals();
-		//personRepository.createManyEntity(2);
+		//personRepository.deletePeopleWithoutAnimals();
+		personRepository.createManyEntity(2);
 
 	}
 
